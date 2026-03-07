@@ -6152,7 +6152,7 @@ def gambaran():
             files = {"file": foto.getvalue()}
 
             data = {
-                "upload_preset": "upload_jawaban",
+                "upload_preset": "ml_default",
                 "public_id": f"{nama}_{nim}"
             }
 
@@ -6190,3 +6190,4 @@ if st.sidebar.button('foto'):
 if st.sidebar.button("Pertemuan 1"):
     st.session_state['kumpulan']={'kover':False,'diag':False,'foto':False,'pertemuan1':True}
     st.rerun()
+
