@@ -4,7 +4,7 @@ import requests
 st.set_page_config(layout="wide")
 
 if 'kumpulan' not in st.session_state:
-    st.session_state['kumpulan']={'kover':True,'diag':False,'foto':False,'pertemuan1':False}
+    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
 
 
 class keterangan:
@@ -6152,7 +6152,7 @@ def gambaran():
             files = {"file": foto.getvalue()}
 
             data = {
-                "upload_preset": "upload_jawaban",
+                "upload_preset": "ml_default",
                 "public_id": f"{nama}_{nim}"
             }
 
@@ -6166,6 +6166,178 @@ def gambaran():
             else:
                 st.error("Upload gagal")
                 st.write(result)
+def dataAngket():
+    st.title("Angket Kepuasan Mahasiswa")
+    st.subheader("Pembelajaran Logika Proposisi dan Ekuivalensi Logis")
+
+    st.write("Silakan isi angket berikut dengan jujur.")
+
+    nama = st.text_input("Nama")
+    nim = st.text_input("NIM")
+
+    skala = [
+    "Sangat Tidak Setuju",
+    "Tidak Setuju",
+    "Netral",
+    "Setuju",
+    "Sangat Setuju"
+    ]
+
+    q1 = st.radio("1. Materi logika proposisi mudah dipahami", skala, index=None)
+    q2 = st.radio("2. Penjelasan tentang pernyataan majemuk membantu pemahaman saya", skala, index=None)
+    q3 = st.radio("3. Saya memahami penggunaan operator logika (¬, ∧, ∨, →, ↔)", skala, index=None)
+    q4 = st.radio("4. Contoh soal membantu memahami konsep logika proposisi", skala, index=None)
+    q5 = st.radio("5. Saya memahami konsep ekuivalensi logis", skala, index=None)
+
+    q6 = st.radio("6. Media pembelajaran yang digunakan menarik", skala, index=None)
+    q7 = st.radio("7. Pembelajaran membuat saya lebih aktif berpikir logis", skala, index=None)
+    q8 = st.radio("8. Penjelasan dosen mudah diikuti", skala, index=None)
+    q9 = st.radio("9. Kegiatan pembelajaran membantu memahami tabel kebenaran", skala, index=None)
+    q10 = st.radio("10. Latihan soal meningkatkan pemahaman saya", skala, index=None)
+
+    q11 = st.radio("11. Pembelajaran meningkatkan kemampuan berpikir logis saya", skala, index=None)
+    q12 = st.radio("12. Saya lebih percaya diri mempelajari logika matematika", skala, index=None)
+    q13 = st.radio("13. Materi logika proposisi bermanfaat untuk mata kuliah lain", skala, index=None)
+    q14 = st.radio("14. Saya memahami hubungan logika proposisi dan matematika diskrit", skala, index=None)
+    q15 = st.radio("15. Pembelajaran membantu memahami pembuktian matematika", skala, index=None)
+
+    q16 = st.radio("16. Media pembelajaran mudah digunakan", skala, index=None)
+    q17 = st.radio("17. Media pembelajaran membuat materi lebih menarik", skala, index=None)
+    q18 = st.radio("18. Tampilan media jelas dan nyaman dilihat", skala, index=None)
+    q19 = st.radio("19. Saya tertarik menggunakan media ini untuk belajar materi lain", skala, index=None)
+    q20 = st.radio("20. Secara keseluruhan saya puas dengan pembelajaran ini", skala, index=None)
+
+    if st.button("Kirim Angket"):
+
+        if None in [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20]:
+            st.warning("Semua pertanyaan harus dijawab")
+        else:
+
+            url = "https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+
+            data = {
+            "entry.111111": nama,
+            "entry.222222": nim,
+            "entry.333333": q1,
+            "entry.444444": q2,
+            "entry.555555": q3,
+            "entry.666666": q4,
+            "entry.777777": q5,
+            "entry.888888": q6,
+            "entry.999999": q7,
+            "entry.101010": q8,
+            "entry.1111111": q9,
+            "entry.1212121": q10,
+            "entry.1313131": q11,
+            "entry.1414141": q12,
+            "entry.1515151": q13,
+            "entry.1616161": q14,
+            "entry.1717171": q15,
+            "entry.1818181": q16,
+            "entry.1919191": q17,
+            "entry.2020202": q18,
+            "entry.2121212": q19,
+            "entry.2222222": q20
+            }
+
+            r = requests.post(url, data=data)
+
+            if r.status_code == 200:
+                st.success("Terima kasih, angket berhasil dikirim")
+            else:
+                st.error("Terjadi kesalahan saat mengirim data")
+
+def materi2():
+    bagian = st.tabs(['test diagnostik','Materi, simulasi dan latihan','Soal Cerita Analisis'])
+    with bagian[0]:
+        st.title("Diagnosis Logika Matematika")
+
+        nama = st.text_input("Nama Mahasiswa")
+
+        soal = [
+        ("Negasi dari ∀x∈ℝ, x² ≥ 0 adalah...",
+        ["∀x x² < 0","∃x x² < 0","∃x x² ≥ 0","∀x x² = 0"],"∃x x² < 0"),
+
+        ("Negasi dari ∃x∈ℕ, x+1=0 adalah...",
+        ["∀x x+1≠0","∃x x+1≠0","∀x x+1=0","Tidak ada"],"∀x x+1≠0"),
+
+        ("Makna ∃x∈ℤ sehingga x²=4 adalah...",
+        ["Semua","Ada bilangan","Tidak ada","Hanya satu"],"Ada bilangan"),
+
+        ("Negasi dari ∀x(x>2→x²>4) adalah...",
+        ["∃x x>2 dan x²≤4","∀x x>2 dan x²≤4","∃x x≤2","∀x x²≤4"],"∃x x>2 dan x²≤4"),
+
+        ("Ekuivalen dari ¬∀xP(x) adalah...",
+        ["∀x¬P(x)","∃x¬P(x)","¬∃xP(x)","∀xP(x)"],"∃x¬P(x)"),
+
+        ("Jika belajar maka lulus. Belajar.",
+        ["Lulus","Tidak lulus","Tidak belajar","Tidak dapat"],"Lulus"),
+
+        ("Jika hujan maka jalan basah. Jalan tidak basah.",
+        ["Hujan","Tidak hujan","Jalan kering","Tidak dapat"],"Tidak hujan"),
+
+        ("Jika belajar maka pintar. Jika pintar maka sukses.",
+        ["Jika belajar maka sukses","Jika sukses maka belajar","Jika belajar tidak sukses","Tidak dapat"],"Jika belajar maka sukses"),
+
+        ("p∨q, ¬p",
+        ["¬q","q","p","p∧q"],"q"),
+
+        ("Jika rajin maka nilai baik. Nilai tidak baik.",
+        ["Mahasiswa rajin","Mahasiswa tidak rajin","Nilai baik","Tidak dapat"],"Mahasiswa tidak rajin")
+        ]
+
+        jawaban_user = []
+        skor = 0
+
+        for i,(pertanyaan,opsi,kunci) in enumerate(soal):
+            j = st.radio(f"Soal {i+1}: {pertanyaan}", opsi, key=i,index=None)
+            jawaban_user.append(j)
+
+        if st.button("Kirim Jawaban"):
+
+            for i,(pertanyaan,opsi,kunci) in enumerate(soal):
+                if jawaban_user[i] == kunci:
+                    skor += 10
+
+
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdfmv_ZOyzf4hW6QSD8t1zu2lWdao8-_PUQif_OMFwcdgvkAA/formResponse"
+
+            data = {
+            "entry.1698168152": nama,
+            "entry.1542413306": skor,
+            "entry.2135798620": jawaban_user[0],
+            "entry.677665291": jawaban_user[1],
+            "entry.1873132860": jawaban_user[2],
+            "entry.1526336051": jawaban_user[3],
+            "entry.688660511": jawaban_user[4],
+            "entry.452120346": jawaban_user[5],
+            "entry.1064866662": jawaban_user[6],
+            "entry.2093701058": jawaban_user[7],
+            "entry.845029584": jawaban_user[8],
+            "entry.2068687803": jawaban_user[9]
+            }
+
+            requests.post(url,data=data)
+
+            st.success("Jawaban berhasil dikirim ke database Google Form")
+    with bagian[1]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/kuantor.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with bagian[2]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/soalTantangan1.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+
+def buku():
+    st.title("Baca Buku Online")
+    with st.expander("Samuel Wibisono"):
+        st.markdown('<iframe src="https://drive.google.com/file/d/1TyeaVyc5vUGQs_2RDZi7coimKa8mfZbW/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
+    with st.expander("Dr. Agus Wibowo, M.Kom, M.Si, MM"):
+        st.markdown('<iframe src="https://drive.google.com/file/d/1-V8jWTdfJdPpSOnJmzeJlcNANTBzWZ2H/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
+    with st.expander("Kenneth H. Rosen"):
+        st.markdown('<iframe src="https://drive.google.com/file/d/1V1FSnkZu_VTs-4zgbA-EK1Zf6zvAPO6N/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
+    
 #====================
 
 if st.session_state['kumpulan']['kover']:
@@ -6176,19 +6348,33 @@ if st.session_state['kumpulan']['diag']:
     diagnosa()
 if st.session_state['kumpulan']['foto']:
     gambaran()
+if st.session_state['kumpulan']['pertemuan2']:
+    materi2()
+if st.session_state['kumpulan']['perpustakaan']:
+    buku()
 #=====================
 
 if st.sidebar.button("pendahuluan"):
-    st.session_state['kumpulan']={'kover':True,'diag':False,'foto':False,'pertemuan1':False}
+    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
     st.rerun()
+if st.sidebar.button("Perpustakaan"):
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.rerun()
+st.sidebar.markdown("---")
 if st.sidebar.button('Test diagnosa'):
-    st.session_state['kumpulan']={'kover':False,'diag':True,'foto':False,'pertemuan1':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':True,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.rerun()
+if st.sidebar.button('Angket'):
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':True,'foto':False,'pertemuan1':False,'pertemuan2':False}
     st.rerun()
 if st.sidebar.button('foto'):
-    st.session_state['kumpulan']={'kover':False,'diag':False,'foto':True,'pertemuan1':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':True,'pertemuan1':False,'pertemuan2':False}
     st.rerun()
+st.sidebar.markdown("---")
 if st.sidebar.button("Pertemuan 1"):
-    st.session_state['kumpulan']={'kover':False,'diag':False,'foto':False,'pertemuan1':True}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':True,'pertemuan2':False}
     st.rerun()
-
-
+if st.sidebar.button("Pertemuan 2"):
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':True}
+    st.rerun()
+ 
