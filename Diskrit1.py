@@ -4,7 +4,8 @@ import requests
 st.set_page_config(layout="wide")
 
 if 'kumpulan' not in st.session_state:
-    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
 
 
 class keterangan:
@@ -6337,7 +6338,25 @@ def buku():
         st.markdown('<iframe src="https://drive.google.com/file/d/1-V8jWTdfJdPpSOnJmzeJlcNANTBzWZ2H/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
     with st.expander("Kenneth H. Rosen"):
         st.markdown('<iframe src="https://drive.google.com/file/d/1V1FSnkZu_VTs-4zgbA-EK1Zf6zvAPO6N/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
-    
+
+def materi3():
+    menu1 = st.tabs(['test kemampuan','Materi','contoh soal','Latihan'])
+    with menu1[0]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/testAwalHimpunan1.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu1[1]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/teoriHimpunan.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu1[2]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/contoh3.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu1[3]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/latihan3.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
 #====================
 
 if st.session_state['kumpulan']['kover']:
@@ -6352,29 +6371,43 @@ if st.session_state['kumpulan']['pertemuan2']:
     materi2()
 if st.session_state['kumpulan']['perpustakaan']:
     buku()
+if st.session_state['kumpulan']['pertemuan3']:
+    materi3()
 #=====================
 
 if st.sidebar.button("pendahuluan"):
-    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 if st.sidebar.button("Perpustakaan"):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 st.sidebar.markdown("---")
 if st.sidebar.button('Test diagnosa'):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':True,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':True,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 if st.sidebar.button('Angket'):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':True,'foto':False,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':True,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 if st.sidebar.button('foto'):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':True,'pertemuan1':False,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':True,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 st.sidebar.markdown("---")
 if st.sidebar.button("Pertemuan 1"):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':True,'pertemuan2':False}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':True,'pertemuan2':False,
+                                  'pertemuan3':False}
     st.rerun()
 if st.sidebar.button("Pertemuan 2"):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':True}
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':True,
+                                  'pertemuan3':False}
+    st.rerun()
+if st.sidebar.button("Pertemuan 3"):
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':True}
+
     st.rerun()
  
