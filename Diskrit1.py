@@ -6359,27 +6359,31 @@ def materi3():
         tampil.tampilkan()
         
 def materi4():
-    menu2 = st.tabs(['Test Awal','Materi','Latihan','Tugas','Diskusi'])
+    menu2 = st.tabs(['Kover','Test Awal','Materi','Latihan','Tugas','Diskusi'])
     with menu2[0]:
-        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/pretest4.html' style='width:100%; height:1000px'></iframe>"
+        tulisanHTML = "<iframe src='https://res.cloudinary.com/ikip-siliwangi/image/upload/v1775874966/Sejarah_teorema_relasi_dan_fungsi_matematika_qbynlh.png' style='width:100%; height:1000px; text-align:center'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
     with menu2[1]:
-        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/materi4.html' style='width:100%; height:1000px'></iframe>"
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/pretest4.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
     with menu2[2]:
-        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/soal4.html' style='width:100%; height:1000px'></iframe>"
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/materi4.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
     with menu2[3]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/soal4.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu2[4]:
         tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/tugas4.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
         tulisanHTML1 = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/masui4.html' style='width:100%; height:500px'></iframe>"
         tampil = keterangan(tulisanHTML1,500)
         tampil.tampilkan()
-    with menu2[4]:
+    with menu2[5]:
         tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/diskusi4.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
