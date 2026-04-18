@@ -6392,7 +6392,7 @@ def materi5():
     menu3 = st.tabs(['Masukan','Evaluasi','Materi','Latihan','Tugas','Diskusi'])
     with menu3[0]:
         st.write("<h4 style='font-family:broadway;color:green'>Berikan Masukan Pendapat Anda tentang Matematika Diskrit</h4>",unsafe_allow_html=True)
-        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/angket2.html' style='width:100%; height:700px'></iframe>"
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/angket4.html' style='width:100%; height:700px'></iframe>"
         tampil = keterangan(tulisanHTML,700)
         tampil.tampilkan()
         st.write("<h4 style='font-family:broadway;color:green'>Berikan Masukan Pendapat Anda tentang Matematika Diskrit</h4>",unsafe_allow_html=True)
