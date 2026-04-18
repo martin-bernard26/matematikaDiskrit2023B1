@@ -6399,6 +6399,10 @@ def materi5():
         tulisanHTML1 = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/angket3.html' style='width:100%; height:700px'></iframe>"
         tampil = keterangan(tulisanHTML1,700)
         tampil.tampilkan()
+    with menu3[1]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/Evauasi5.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
 #====================
 
 if st.session_state['kumpulan']['kover']:
