@@ -6462,11 +6462,11 @@ if st.session_state['kumpulan']['chat']:
 #=====================
 
 if st.sidebar.button("pendahuluan"):
-    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+    st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
                                   'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False}
     st.rerun()
 if st.sidebar.button("Perpustakaan"):
-    st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'pertemuan1':False,'pertemuan2':False,
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
                                   'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False}
     st.rerun()
 st.sidebar.markdown("---")
