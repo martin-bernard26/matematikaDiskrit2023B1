@@ -477,7 +477,7 @@ def Pendahuluan():
     tampilkan1 = keterangan(tulisanHTML,1000)
     tampilkan1.tampilkan()
 def materi1():
-    bagian = st.tabs(['Dasar Teori','Penghubung Logika (Operator)','Ekuivalensi Logis','Contoh Soal','Latihan Soal'])
+    bagian = st.tabs(['Dasar Teori','Penghubung Logika (Operator)','Ekuivalensi Logis','Contoh Soal','Latihan Soal','Video Pembelajaran'])
     with bagian[0]:
         tulisanHTML1= """
         <!DOCTYPE html>
@@ -6016,6 +6016,11 @@ render();
         """
         tampilkan6 = keterangan(tulisanHTML5,18000)
         tampilkan6.tampilkan()
+    with bagian[5]:
+        st.write('<h5>bagian1</h5>',unsafe_allow_html=True)
+        st.video("https://youtu.be/lQ1hRNE9v6c")
+        st.write('<h5>bagian2</h5>',unsafe_allow_html=True)
+        st.video("https://youtu.be/jc4iGtLwKtM")
     
 def diagnosa():
     st.title("Tes Diagnosis Logika Proposisi dan Ekuivalensi Logis")
@@ -6340,7 +6345,7 @@ def buku():
         st.markdown('<iframe src="https://drive.google.com/file/d/1V1FSnkZu_VTs-4zgbA-EK1Zf6zvAPO6N/preview" width="100%" height="1000"></iframe>',unsafe_allow_html=True)
 
 def materi3():
-    menu1 = st.tabs(['test kemampuan','Materi','contoh soal','Latihan'])
+    menu1 = st.tabs(['test kemampuan','Materi','contoh soal','Latihan','Video Pembelajaran'])
     with menu1[0]:
         tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/testAwalHimpunan1.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
@@ -6357,6 +6362,11 @@ def materi3():
         tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/latihan3.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
+    with menu1[4]:
+        st.write("<h4>Bagian 1</h4>",unsafe_allow_html=True)
+        st.video("https://youtu.be/DnutsqLxfQc")
+        st.write("<h4>Bagian 2</h4>",unsafe_allow_html=True)
+        st.video("https://youtu.be/ombCc9jsqkc")
         
 def materi4():
     menu2 = st.tabs(['Kover','Test Awal','Materi','Latihan','Tugas','Diskusi'])
@@ -6405,7 +6415,7 @@ def materi5():
         tampil.tampilkan()
 
 def materi6():
-    menu4 = st.tabs(['Cover','Test Diagnos','Materi','Contoh Latihan', 'Tugas'])
+    menu4 = st.tabs(['Cover','Test Diagnos','Materi','Contoh Latihan', 'Tugas','Video Pembelajaran'])
     with menu4[0]:
         tulisanHTML = "<iframe src='https://res.cloudinary.com/ikip-siliwangi/image/upload/v1777079045/ChatGPT_Image_25_Apr_2026_08.01.10_ycenrb.png' style='width:100%; height:700px'></iframe>"
         tampil = keterangan(tulisanHTML,700)
@@ -6430,6 +6440,9 @@ def materi6():
         tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/tugas6.html' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
+    with menu4[5]:
+        st.title("Video Pembelajaran")
+        st.video("https://youtu.be/yYh-tcr7VOo")
 
 def chatting():
     tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/chatbox6.html' style='width:100%; height:1000px'></iframe>"
