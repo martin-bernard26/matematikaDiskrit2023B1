@@ -6454,7 +6454,7 @@ def materi7():
     tampil = keterangan(tulisanHTML,1000)
     tampil.tampilkan()
 def materi8():
-    menu = st.tabs(['Kover','Video Pembelajaran','Pencacahan dan Kombinasi','Latihan','Papan Tulis'])
+    menu = st.tabs(['Kover','Video Pembelajaran','Pencacahan dan Kombinasi','Latihan','Papan Tulis','Aplikasi Artificial Intelegence'])
     with menu[0]:
         tulisanHTML = "<iframe src='https://res.cloudinary.com/dfkw4ux0e/image/upload/v1778888444/ChatGPT_Image_May_16_2026_06_32_08_AM_p85oyy.png' style='width:100%; height:1400px'></iframe>"
         tampil = keterangan(tulisanHTML,1400)
@@ -6492,7 +6492,11 @@ def materi8():
         tulisanHTML = "<iframe src='https://app.ziteboard.com/' style='width:100%; height:1000px'></iframe>"
         tampil = keterangan(tulisanHTML,1000)
         tampil.tampilkan()
-        
+    with menu[5]:
+        st.title('Pengantar Kecerdasan Buatan (AI) dengan Matematika Diskrit')
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/Machine1.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
 #====================
 
 if st.session_state['kumpulan']['kover']:
