@@ -5,7 +5,7 @@ st.set_page_config(layout="wide")
 
 if 'kumpulan' not in st.session_state:
     st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
 
 
 class keterangan:
@@ -6453,6 +6453,46 @@ def materi7():
     tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/UTS1.html' style='width:100%; height:1000px'></iframe>"
     tampil = keterangan(tulisanHTML,1000)
     tampil.tampilkan()
+def materi8():
+    menu = st.tabs(['Kover','Video Pembelajaran','Pencacahan dan Kombinasi','Latihan','Papan Tulis'])
+    with menu[0]:
+        tulisanHTML = "<iframe src='https://res.cloudinary.com/dfkw4ux0e/image/upload/v1778888444/ChatGPT_Image_May_16_2026_06_32_08_AM_p85oyy.png' style='width:100%; height:1400px'></iframe>"
+        tampil = keterangan(tulisanHTML,1400)
+        tampil.tampilkan()
+    with menu[1]:
+        st.markdown("---")
+        st.write("Kaidah Penjumlahan dan Perkalian")
+        st.markdown("---")
+        st.video("https://youtu.be/KMZ3qTan4_U")
+        st.markdown("---")
+        st.write("Permutasi dan Kombinasi")
+        st.markdown("---")
+        st.video("https://youtu.be/bEB8ByGR88A")
+        st.markdown("---")
+        st.write("Teorema Binomial")
+        st.markdown("---")
+        st.video("https://youtu.be/kTYUwtPC7dE")
+        st.markdown("---")
+        st.write("Pigeon Hole Principle")
+        st.markdown("---")
+        st.video("https://youtu.be/N6nb5H5POXQ")
+        st.markdown("---")
+        st.write("Inklusif dan Eksklusif")
+        st.markdown("---")
+        st.video("https://youtu.be/cYJgXYqHkY0")
+    with menu[2]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/Kombagian1.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu[3]:
+        tulisanHTML = "<iframe src='https://martin-bernard26.github.io/matematikaDiskritB12023html/latihanPencacahan.html' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+    with menu[4]:
+        tulisanHTML = "<iframe src='https://app.ziteboard.com/' style='width:100%; height:1000px'></iframe>"
+        tampil = keterangan(tulisanHTML,1000)
+        tampil.tampilkan()
+        
 #====================
 
 if st.session_state['kumpulan']['kover']:
@@ -6479,62 +6519,70 @@ if st.session_state['kumpulan']['pertemuan7']:
     materi7()
 if st.session_state['kumpulan']['chat']:
     chatting()
+if st.session_state['kumpulan']['pertemuan8']:
+    materi8()
 #=====================
 
 if st.sidebar.button("pendahuluan"):
     st.session_state['kumpulan']={'kover':True,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button("Perpustakaan"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':True,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 st.sidebar.markdown("---")
 if st.sidebar.button('Test diagnosa'):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':True,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button('Angket'):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':True,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button('foto'):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':True,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button('Chatting Diskusi dan Masukan'):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':True,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 st.sidebar.markdown("---")
 if st.sidebar.button("Proposisi Logika"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':True,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button("Kuantor dan Kesimpulan Logika"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':True,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button("Teori Himpunan"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':True,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':True,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 if st.sidebar.button("Relasi dan Fungsi"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':True,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':True,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 st.sidebar.markdown('---')
 if st.sidebar.button("Evaluasi 1"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':True,'pertemuan6':False,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':True,'pertemuan6':False,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
 st.sidebar.markdown('---')
 
 if st.sidebar.button("Teori Bilangan"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':True,'pertemuan7':False}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':True,'pertemuan7':False,'pertemuan8':False}
     st.rerun()
+st.sidebar.markdown('---')
 if st.sidebar.button("Ujian Tengah Semester"):
     st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
-                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':True}
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':True,'pertemuan8':False}
+    st.rerun()
+st.sidebar.markdown('---')
+if st.sidebar.button("Kombinatorik"):
+    st.session_state['kumpulan']={'kover':False,'perpustakaan':False,'diag':False,'angket':False,'foto':False,'chat':False,'pertemuan1':False,'pertemuan2':False,
+                                  'pertemuan3':False,'pertemuan4':False,'pertemuan5':False,'pertemuan6':False,'pertemuan7':False,'pertemuan8':True}
     st.rerun()
